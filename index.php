@@ -1,7 +1,9 @@
 <?php
 require_once "Pages/main.php";
+require_once "Pages/reg.php";
 
 $main = new Main();
+$reg = new Reg();
 switch ($_GET["action"])
 {
     case "":
@@ -11,7 +13,7 @@ switch ($_GET["action"])
         echo "qwer";
         break;
     case "reg":
-        echo "reg";
+        $reg->view();
         break;
 }
 
