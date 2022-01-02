@@ -8,5 +8,4 @@ class Main extends Page
         $this->header();
     }
 
-
 }

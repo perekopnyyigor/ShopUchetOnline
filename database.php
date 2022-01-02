@@ -44,5 +44,25 @@ class Database
         return $sel;
 
     }
+    public function select_one($colum, $tab, $parametr = "")
+    {
+        $this->connect();
+
+        $sql = "SELECT " . $colum . " FROM " . $tab . " " . $parametr;
+        $result = $this->conn->query($sql);
+        $i = 0;
+
+
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $sel[$i] = $row[$colum];
+                $i++;
+            }
+
+        }
+
+        return $sel[0];
+
+    }
 }
 
